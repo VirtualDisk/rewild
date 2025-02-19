@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
   # Host the files of the site on port 8089
   nginx:
-    image: nginx:latest
+    image: docker.io/library/nginx:1.27.4-alpine
     depends_on:
       - jekyll-prod
     ports:
@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
   # Hook nginx exposed port onto the web
   cloudflared:
-    image: cloudflare/cloudflared:latest
+    image: docker.io/cloudflare/cloudflared:2025.2.0
     depends_on:
       - nginx
     profiles:

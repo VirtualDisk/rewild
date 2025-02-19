@@ -1,4 +1,4 @@
-FROM ruby:latest
+FROM docker.io/library/ruby:3.2.7-alpine
 
 RUN gem install jekyll bundler
 
