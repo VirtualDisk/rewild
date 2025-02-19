@@ -23,8 +23,8 @@
   "ignorePaths": ["**/*.sops.*"],
   "docker": {
     "fileMatch": [
-      "(^|/)Dockerfile?$",
-      "(^|/)docker-compose/.+\\.yml?$",
+      "(^|/)Dockerfile",
+      "(^|/)docker-compose.+\\.ya?ml?$",
     ]
   }
 }
