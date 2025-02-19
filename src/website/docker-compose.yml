@@ -23,6 +23,15 @@ services:
     profiles:
       - prod
     restart: unless-stopped
+  nginx-exporter:
+    image: docker.io/nginx/nginx-prometheus-exporter:1.4.0
+    depends_on:
+      - nginx
+    ports:
+      - 9113:9113
+    profiles:
+      - prod
+    restart: unless-stopped
   # Hook nginx exposed port onto the web
   cloudflared:
     image: docker.io/cloudflare/cloudflared:2025.2.0
