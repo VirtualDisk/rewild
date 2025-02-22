@@ -26,7 +26,7 @@ ipcMain.handle(
   }
 );
 
-const DOCKER_PREFIX = "docker-compose -f src/website/docker-compose.yml ";
+const DOCKER_PREFIX = "docker compose -f src/website/docker-compose.yml ";
 
 ipcMain.handle("run-dev-server", (_event: IpcMainInvokeEvent) => {
   exec(DOCKER_PREFIX + "--profile dev up --build -d", (error) => {
